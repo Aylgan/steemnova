@@ -111,8 +111,9 @@ function shoot(&$attackers, $fleetID, $element, $unit, &$defenders, &$ad)
 		else
 		{
 			//-penetration
-			$ad['shield'] -= $penetration;
-			$victimShip['shield'] += $penetration; // shoot at shield
+			$ad['shield'] += $unit['att'];
+				
+			$victimShip['shield'] -= $unit['att']; // shoot at shield
 		}
 	}
 	// else bounced hit (Weaponry of the shooting unit is less than 1% of the Shielding of the target unit)
